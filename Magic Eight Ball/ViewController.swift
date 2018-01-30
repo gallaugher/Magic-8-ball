@@ -41,15 +41,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     // This @IBAction function runs each time the user clicks the answer button
     @IBAction func answerButtonPressed(_ sender: UIButton) {
-        
-        
         // Get a number to use as an index for the answersArray.
         // Array indicies take an Int, arc4random_uniform takes a UInt32 and returns a UInt32
         // so we have some conversions in this statement.
