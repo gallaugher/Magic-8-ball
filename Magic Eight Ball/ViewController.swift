@@ -49,9 +49,11 @@ class ViewController: UIViewController {
     // This @IBAction function runs each time the user clicks the answer button
     @IBAction func answerButtonPressed(_ sender: UIButton) {
         
+        
         // Get a number to use as an index for the answersArray.
         // Array indicies take an Int, arc4random_uniform takes a UInt32 and returns a UInt32
         // so we have some conversions in this statement.
+        // Values declared inside functions will be forgotten each time a function executes (e.g. when the button is pressed in this case). That's OK because we don't need to save the randomIndex from press to press.
         let randomIndex = Int(arc4random_uniform(UInt32(answersArray.count)))
         
         // When we demonstrated the console in Xcode we showed the statement below will
@@ -59,6 +61,7 @@ class ViewController: UIViewController {
         print("Random index = \(randomIndex)")
         
         // Set the @IBOutlet answerLabel's text attribute to the randomIndex element of answersArray
+        // Remember: answersArray is an array of String values. To get a specific value, use answersArray[#], where # is the Int value for the array item you want e.g. answersArray[0] is the first String "It is certain", etc.
         answerLabel.text = answersArray[randomIndex]
     }
 }
